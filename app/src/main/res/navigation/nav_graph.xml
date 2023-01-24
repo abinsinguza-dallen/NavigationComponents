@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/balanceFragment"
+        android:name="com.example.graphs_nav.BalanceFragment"
+        android:label="fragment_balance"
+        tools:layout="@layout/fragment_balance" />
+    <fragment
+        android:id="@+id/chooseFragment"
+        android:name="com.example.graphs_nav.ChooseFragment"
+        android:label="fragment_choose"
+        tools:layout="@layout/fragment_choose" >
+        <action
+            android:id="@+id/action_chooseFragment_to_specifyFragment"
+            app:destination="@id/specifyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmFragment"
+        android:name="com.example.graphs_nav.ConfirmFragment"
+        android:label="fragment_confirm"
+        tools:layout="@layout/fragment_confirm" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.graphs_nav.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_chooseFragment"
+            app:destination="@id/chooseFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_balanceFragment"
+            app:destination="@id/balanceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/specifyFragment"
+        android:name="com.example.graphs_nav.SpecifyFragment"
+        android:label="fragment_specify"
+        tools:layout="@layout/fragment_specify" >
+        <action
+            android:id="@+id/action_specifyFragment_to_confirmFragment"
+            app:destination="@id/confirmFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="com.example.graphs_nav.TransactionFragment"
+        android:label="fragment_transaction"
+        tools:layout="@layout/fragment_transaction" />
+</navigation>
